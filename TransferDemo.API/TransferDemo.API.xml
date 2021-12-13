@@ -1,0 +1,234 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TransferDemo.API</name>
+    </assembly>
+    <members>
+        <member name="F:TransferDemo.API.Controllers.TransfersController._transferDbContext">
+            <summary>
+            El contexto de datos.
+            </summary>
+        </member>
+        <member name="F:TransferDemo.API.Controllers.TransfersController._mapper">
+            <summary>
+            La interfaz del componente AutoMaper que permite asignar las propiedades de un objeto a otro.
+            </summary>
+        </member>
+        <member name="M:TransferDemo.API.Controllers.TransfersController.#ctor(TransferDemo.API.Infraestructure.TransferDbContext,AutoMapper.IMapper)">
+            <summary>
+            Constructor de la clase.
+            </summary>
+            <param name="transferDbContext">El contexto de datos.</param>
+            <param name="mapper">La interfaz del componente AutoMaper que permite asignar las propiedades de un objeto a otro.</param>
+        </member>
+        <member name="M:TransferDemo.API.Controllers.TransfersController.GetById(System.Guid)">
+            <summary>
+            Obtiene la información de la transferencia de acuerdo a su identificador.
+            </summary>
+            <param name="id">El identificador de la transferencia.</param>
+            <returns>Un <see cref="T:TransferDemo.API.Models.Transfer"/> que contiene la información de la transferencia.</returns>
+        </member>
+        <member name="M:TransferDemo.API.Controllers.TransfersController.GetAll">
+            <summary>
+            Obtiene todas las transferencias realizadas.
+            </summary>
+            <returns>Un <see cref="T:System.Collections.Generic.List`1"/> que contiene el listado de transferencias.</returns>
+        </member>
+        <member name="M:TransferDemo.API.Controllers.TransfersController.CreateTransfer(TransferDemo.API.Models.TransferDto)">
+            <summary>
+            Realiza una transferencia SIPAP.
+            </summary>
+            <param name="transferDto">Información de la operación de transferencia.</param>
+            <returns></returns>
+        </member>
+        <member name="M:TransferDemo.API.Extensions.ServiceExtensions.ConfigureCors(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Habilita la política CORS para que otros servicios puedan conectarse a este servicio.
+            </summary>
+            <param name="services">Un IServiceCollection que permite facilitar la implementación del patrón de diseño Dependency Inyection y otras configuraciones del servicio.</param>
+        </member>
+        <member name="M:TransferDemo.API.Extensions.ServiceExtensions.ConfigureSwagger(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Permite generar la autodocumentación de la API de permisos.
+            </summary>
+            <param name="services">Un IServiceCollection que permite facilitar la implementación del patrón de diseño Dependency Inyection y otras configuraciones del servicio.</param>
+        </member>
+        <member name="M:TransferDemo.API.Extensions.ServiceExtensions.ConfigureHealthChecks(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Configura el monitor de estado del servicio.
+            </summary>
+            <param name="services">Un IServiceCollection que permite facilitar la implementación del patrón de diseño Dependency Inyection y otras configuraciones del servicio.</param>
+        </member>
+        <member name="M:TransferDemo.API.Extensions.ServiceExtensions.ConfigureInyections(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Configura las inyecciones de dependencia del proyecto.
+            </summary>
+            <param name="services">Un IServiceCollection que permite facilitar la implementación del patrón de diseño Dependency Inyection y otras configuraciones del servicio.</param>
+        </member>
+        <member name="T:TransferDemo.API.Infraestructure.ActionFilters.ValidateAccountBalanceFilterAttribute">
+            <summary>
+            Atributo personalizado para validar la información bancaria.
+            </summary>
+        </member>
+        <member name="F:TransferDemo.API.Infraestructure.ActionFilters.ValidateAccountBalanceFilterAttribute._mapper">
+            <summary>
+            La interfaz del componente AutoMaper que permite asignar las propiedades de un objeto a otro.
+            </summary>
+        </member>
+        <member name="M:TransferDemo.API.Infraestructure.ActionFilters.ValidateAccountBalanceFilterAttribute.#ctor(AutoMapper.IMapper)">
+            <summary>
+            Constructor de la clase.
+            </summary>
+            <param name="mapper">La interfaz del componente AutoMaper que permite asignar las propiedades de un objeto a otro.</param>
+        </member>
+        <member name="M:TransferDemo.API.Infraestructure.ActionFilters.ValidateAccountBalanceFilterAttribute.OnActionExecuting(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)">
+            <summary>
+            Se ejecuta antes de lanzar el controlador.
+            </summary>
+            <param name="context">El contexto de ejecución.</param>
+        </member>
+        <member name="M:TransferDemo.API.Infraestructure.ActionFilters.ValidateAccountBalanceFilterAttribute.OnActionExecuted(Microsoft.AspNetCore.Mvc.Filters.ActionExecutedContext)">
+            <summary>
+            Se ejecuta luego que finalice la acción del controlador.
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:TransferDemo.API.Infraestructure.Annotations.CustomCompareAttribute">
+            <summary>
+            Atributo personalizado que permite simplificar la comparación entre propiedades.
+            </summary>
+        </member>
+        <member name="F:TransferDemo.API.Infraestructure.Annotations.CustomCompareAttribute.DefaultErrorMessage">
+            <summary>
+            El mensaje de error predeterminado.
+            </summary>
+        </member>
+        <member name="F:TransferDemo.API.Infraestructure.Annotations.CustomCompareAttribute.BankErrorMessage">
+            <summary>
+            El mensaje de error en caso que los bancos sean iguales.
+            </summary>
+        </member>
+        <member name="P:TransferDemo.API.Infraestructure.Annotations.CustomCompareAttribute.OtherProperty">
+            <summary>
+            La otra propiedad a la cual se hace referencia.
+            </summary>
+        </member>
+        <member name="M:TransferDemo.API.Infraestructure.Annotations.CustomCompareAttribute.#ctor(System.String)">
+            <summary>
+            Constructor de la clase.
+            </summary>
+            <param name="otherProperty">La propiedad para comparar con la propiedad actual.</param>
+        </member>
+        <member name="M:TransferDemo.API.Infraestructure.Annotations.CustomCompareAttribute.IsValid(System.Object,System.ComponentModel.DataAnnotations.ValidationContext)">
+            <summary>
+            Representa un contenedor para los resultados de una solicitud de validación.
+            </summary>
+            <param name="value">El valor de la propiedad actual.</param>
+            <param name="validationContext">Describe el contexto en el que se realiza una verificación de validación.</param>
+            <returns>Un ValidationResult que indica si la operación tuvo exito o no.</returns>
+        </member>
+        <member name="T:TransferDemo.API.Infraestructure.Exceptions.ExceptionMiddleware">
+            <summary>
+            Maneja las exepciones globales del proyecto.
+            </summary>
+        </member>
+        <member name="M:TransferDemo.API.Infraestructure.Exceptions.ExceptionMiddleware.UseGlobalExceptionHandler(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Permite que se muestre un mensaje de error genérico cuando se produce una exepción no controlada.
+            </summary>
+            <param name="app">Define una clase que proporciona los mecanismos para configurar la canalización de solicitudes de una aplicación.</param>
+        </member>
+        <member name="T:TransferDemo.API.Infraestructure.TransferDbContext">
+            <summary>
+            El contexto de datos del proyecto.
+            </summary>
+        </member>
+        <member name="P:TransferDemo.API.Infraestructure.TransferDbContext.Transfers">
+            <summary>
+            La tabla que administra las transferencias.
+            </summary>
+        </member>
+        <member name="P:TransferDemo.API.Infraestructure.TransferDbContext.Accounts">
+            <summary>
+            La tabla que administra las cuentas.
+            </summary>
+        </member>
+        <member name="M:TransferDemo.API.Infraestructure.TransferDbContext.OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)">
+            <summary>
+            Configura el contexto de datos.
+            </summary>
+            <param name="optionsBuilder">Las opciones de configuración del contexto.</param>
+        </member>
+        <member name="M:TransferDemo.API.Infraestructure.TransferDbContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            Permite realizar actualizaciones al modelo de datos.
+            </summary>
+            <param name="modelBuilder">El constructor del modelo que se encarga de realizar los ajustes al modelo de datos.</param>
+        </member>
+        <member name="P:TransferDemo.API.Models.Transfer.Id">
+            <summary>
+            El identificador de la transferencia.
+            </summary>
+        </member>
+        <member name="P:TransferDemo.API.Models.Transfer.TransferDate">
+            <summary>
+            La fecha de la operación.
+            </summary>
+        </member>
+        <member name="P:TransferDemo.API.Models.Transfer.Amount">
+            <summary>
+            El monto a transferir.
+            </summary>
+        </member>
+        <member name="P:TransferDemo.API.Models.Transfer.BankNameFrom">
+            <summary>
+            El banco origen.
+            </summary>
+        </member>
+        <member name="P:TransferDemo.API.Models.Transfer.CustomerAccountFrom">
+            <summary>
+            La cuenta origen.
+            </summary>
+        </member>
+        <member name="P:TransferDemo.API.Models.Transfer.BankNameTo">
+            <summary>
+            El banco destino.
+            </summary>
+        </member>
+        <member name="P:TransferDemo.API.Models.Transfer.CustomerAccountTo">
+            <summary>
+            La cuenta destino.
+            </summary>
+        </member>
+        <member name="P:TransferDemo.API.Models.Transfer.Status">
+            <summary>
+            El estado de la transferencia.
+            </summary>
+        </member>
+        <member name="P:TransferDemo.API.Models.TransferDto.Id">
+            <summary>
+            El identificador de la transferencia.
+            </summary>
+        </member>
+        <member name="P:TransferDemo.API.Models.TransferDto.TransferDate">
+            <summary>
+            La fecha de la operación.
+            </summary>
+        </member>
+        <member name="P:TransferDemo.API.Models.TransferDto.Amount">
+            <summary>
+            El monto a transferir.
+            </summary>
+        </member>
+        <member name="P:TransferDemo.API.Models.TransferDto.BankInformationSource">
+            <summary>
+            Información de la cuenta origen.
+            </summary>
+        </member>
+        <member name="P:TransferDemo.API.Models.TransferDto.BankInformationDestination">
+            <summary>
+            Información de la cuenta destino.
+            </summary>
+        </member>
+    </members>
+</doc>
