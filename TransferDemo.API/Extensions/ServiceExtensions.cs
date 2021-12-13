@@ -28,7 +28,7 @@ namespace TransferDemo.API.Extensions
         });
 
         /// <summary>
-        /// Permite generar la autodocumentación de la API de permisos.
+        /// Permite generar la autodocumentación de la API.
         /// </summary>
         /// <param name="services">Un IServiceCollection que permite facilitar la implementación del patrón de diseño Dependency Inyection y otras configuraciones del servicio.</param>
         public static void ConfigureSwagger(this IServiceCollection services)
